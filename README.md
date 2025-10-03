@@ -54,6 +54,11 @@ ssh  -> `git clone git@github.com:SchrodingersDev/astro_insight.git` <br>
 
 then cd to repo
 
+### Using Virtual Env(Optional)
+`conda create -n astro_insight python=3.11 -y` <br>
+I prefer miniconda you are free to use anything, the base should be 3.11.
+
+
 ### Install dependencies:
 
 `pip install -r requirements.txt`
