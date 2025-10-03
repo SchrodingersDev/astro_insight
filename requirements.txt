@@ -1,0 +1,26 @@
+# Web application framework
+streamlit
+
+# High-performance API framework
+fastapi
+
+# ASGI server for FastAPI
+uvicorn
+
+# Core LLM application framework
+langchain
+
+# LangChain integration for OpenAI models
+langchain-openai
+
+# Community integrations for LangChain (e.g., vector stores)
+langchain-community
+
+# Data validation and schema modeling
+pydantic
+
+# Vector similarity search library (for RAG)
+faiss-cpu
+
+# Loads environment variables from .env files
+python-dotenv
