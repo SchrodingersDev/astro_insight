@@ -24,3 +24,6 @@ faiss-cpu
 
 # Loads environment variables from .env files
 python-dotenv
+
+# from translation
+deep_translator
