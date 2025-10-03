@@ -1,8 +1,9 @@
 import os
 from dotenv import load_dotenv
-from langchain_openai import ChatOpenAI  # updated package
+from langchain_openai import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 from zodiac import get_zodiac
+from translate import translate_text  # import your translator
 
 # Load environment variables from .env
 load_dotenv()
@@ -14,21 +15,20 @@ if not OPENAI_API_KEY:
 def generate_daily_insight_openai(birth_date: str, name: str, language: str = "en") -> dict:
     """
     Generates personalized astrological insight using OpenAI via LangChain.
+    Translates the insight to the target language if needed.
     """
 
     zodiac_sign = get_zodiac(birth_date)
 
     prompt_template = """
 You are an expert astrologer. Generate a concise and friendly personalized daily astrological insight
-for {name}, whose zodiac sign is {zodiac_sign}. Provide the insight in {language}.
-Keep it positive, clear, and engaging.
+for {name}, whose zodiac sign is {zodiac_sign}. Keep it positive, clear, and engaging.
     """
 
     chat_prompt = ChatPromptTemplate.from_template(prompt_template)
     formatted_prompt = chat_prompt.format_prompt(
         name=name,
-        zodiac_sign=zodiac_sign,
-        language=language
+        zodiac_sign=zodiac_sign
     ).to_messages()
 
     # Initialize ChatOpenAI from langchain-openai
@@ -38,7 +38,11 @@ Keep it positive, clear, and engaging.
         openai_api_key=OPENAI_API_KEY
     )
 
-    # Use invoke() instead of __call__()
+    # Generate insight
     response = llm.invoke(formatted_prompt)
+    insight = response.content
 
-    return {"insight": response.content}
+    # Translate if target language is not English
+    translated_insight = translate_text(insight, language)
+
+    return {"insight": translated_insight}

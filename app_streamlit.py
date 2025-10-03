@@ -33,7 +33,7 @@ elif mode == "Personalized Insight":
         )
         birth_time = st.time_input("Birth Time")
         birth_place = st.text_input("Birth Place")
-        language = st.selectbox("Language", ["en", "hi"])
+        language = st.selectbox("Language", ["en", "hi", "fr", "es", "de"])  # example languages
         submit_info = st.form_submit_button("Generate Insight")
 
     if submit_info:
@@ -42,5 +42,13 @@ elif mode == "Personalized Insight":
             name,
             language
         )
-        st.subheader(f"Hello, {name}! Your Personalized Astrological Insight:")
+
+        # Display zodiac sign and language
+        from zodiac import get_zodiac
+        zodiac_sign = get_zodiac(birth_date.strftime("%Y-%m-%d"))
+
+        st.subheader(f"Hello, {name}!")
+        st.markdown(f"**Zodiac Sign:** {zodiac_sign}")
+        st.markdown(f"**Language:** {language.upper()}")
+        st.markdown("**Your Personalized Astrological Insight:**")
         st.write(response["insight"])
