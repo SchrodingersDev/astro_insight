@@ -55,6 +55,10 @@ elif mode == "Personalized Insight Chat":
     if st.session_state.user_info_submitted:
         st.subheader(f"Hello, {st.session_state.user_info['name']}! Start chatting:")
 
+        # Container for chat history to allow scrolling
+        chat_container = st.container()
+
+        # Chat input
         user_input = st.text_input("Type your message here...", key="chat_input")
 
         if st.button("Send") and user_input.strip() != "":
@@ -63,9 +67,13 @@ elif mode == "Personalized Insight Chat":
                 st.session_state.user_info['name'],
                 st.session_state.user_info['language']
             )
+            # Append to messages
             st.session_state.messages.append({"user": user_input, "bot": response["insight"]})
+            # Clear input box
+            st.experimental_rerun()
 
-        # Display chat history
-        for chat in st.session_state.messages:
-            st.markdown(f"**You:** {chat['user']}")
-            st.markdown(f"**AstroBot:** {chat['bot']}")
+        # Display messages inside container
+        with chat_container:
+            for chat in st.session_state.messages:
+                st.markdown(f"**You:** {chat['user']}")
+                st.markdown(f"**AstroBot:** {chat['bot']}")
