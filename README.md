@@ -3,6 +3,15 @@
 A personalized astrology insight generator built using Streamlit, LangChain, OpenAI GPT-4, and retrieval-augmented generation (RAG) using OpenAI Emebeddings. The application provides daily astrological insights for all zodiac signs and personalized insights based on user birth data. It also supports multiple languages including English, Hindi, and several Indian languages.
 
 ⸻
+## Run Images
+Daily Astro Insights <br>
+![Alt text](data/demo_image/demo1.png)
+LLM generated Output <br>
+![Alt text](data/demo_image/demo2.png)
+Multilingual <br>
+![Alt text](data/demo_image/demo1.png)
+
+⸻
 
 ## Features
 
