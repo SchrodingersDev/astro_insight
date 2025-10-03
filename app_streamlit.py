@@ -33,7 +33,7 @@ elif mode == "Personalized Insight":
         )
         birth_time = st.time_input("Birth Time")
         birth_place = st.text_input("Birth Place")
-        language = st.selectbox("Language", ["en", "hi", "fr", "es", "de"])  # example languages
+        language = st.selectbox("Language", ["en", "hi", "bn", "ta", "kn", "te"])  # example languages (We can add more)
         submit_info = st.form_submit_button("Generate Insight")
 
     if submit_info:
