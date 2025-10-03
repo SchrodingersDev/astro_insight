@@ -5,11 +5,11 @@ A personalized astrology insight generator built using Streamlit, LangChain, Ope
 ⸻
 ## Run Images
 Daily Astro Insights <br>
-![Alt text](data/demo_image/demo1.png)
+![Alt text](data/demo_image/demo1.png) <br>
 LLM generated Output <br>
-![Alt text](data/demo_image/demo2.png)
+![Alt text](data/demo_image/demo2.png) <br>
 Multilingual <br>
-![Alt text](data/demo_image/demo1.png)
+![Alt text](data/demo_image/demo3.png) <br>
 
 ⸻
 
