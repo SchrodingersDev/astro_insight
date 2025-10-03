@@ -70,7 +70,8 @@ I prefer miniconda you are free to use anything, the base should be 3.11.
 ### Run the fastAPI and Streamlit app
 
 `python main.py` <br>
-`streamlit run app_streamlit.py`
+`streamlit run app_streamlit.py` <br>
+Run both the commands preferably in different terminal session (Linux/Unix) (I used mac terminal)
 
 
 ⸻
@@ -83,7 +84,7 @@ astro_insight/
 ├── app_streamlit.py       # Streamlit front-end UI
 ├── llm_chain.py           # LLM integration with OpenAI and RAG context
 ├── rag_retriever.py       # Mock vector store and retrieval
-├── translate.py           # Multi-language translation using Deep Translator
+├── translate.py           # Multi-language translation using Deep Translator (* Facing some issue with IndicTrans2)
 ├── zodiac.py              # Zodiac calculation from birth date
 ├── insight_generator.py   # Static daily insights for all zodiac signs
 ├── requirements.txt       # Python dependencies
